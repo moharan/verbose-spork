@@ -1,6 +1,9 @@
 /* css to App */
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
 }
 
 .App-header {
@@ -39,5 +42,4 @@
   .construction {
     width: 50vw;
   }
-
  }
