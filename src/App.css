@@ -38,6 +38,14 @@
   color: #999;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
 @media all and (min-width: 769px) {
   .construction {
     width: 50vw;

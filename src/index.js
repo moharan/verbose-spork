@@ -1,11 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import Amplify from 'aws-amplify';
+import Amplify, { I18n } from 'aws-amplify';
 import config from './aws-exports';
 import './index.css';
 import App from './App';
 Amplify.configure(config);
+
+I18n.setLanguage('es');
+
+const dict = {
+  'es': {
+    "Sign In": "Vamos al Aplicativo SISI",
+    "Username *": "Usuario *",
+    "Password *": "Contraseña *",
+    "Enter your password": "Ingrese su contraseña",
+    "Enter your username": "Ingrese su usuario",
+    "Reset Password": "Reiniciar Contraseña",
+    "Sign in to your account": "Iniciar Sesión Aplicativo SISI",
+    "Forgot your password?": "Olvidaste tu contraseña?",
+    "Reset password": "Reiniciar Contraseña",
+    "No account?": "¿No tienes una cuenta?",
+    "Create account": "Crear una cuenta",
+    // "Please fill out this field. ": "No funciona",
+    "Create a new account": "Crear una Nueva Cuenta",
+    "Username": "Usuario",
+    "Password": "Contraseña",
+    "Create Account": "Crear cuenta",
+    "Have an account?": "¿Tienes cuenta?",
+    "Sign in": "Iniciar sesión",
+    "Phone Number *": "Número Telefónico",
+    "Email Address *": "Correo electrónico",
+    "Reset your password": "Reinicie su contraseña",
+    "Back to Sign In": "Volver al inicio de sesión",
+    "Send Code": "Enviar código",
+    "Sign Out": "Cerrar sesión"
+  }
+};
+
+I18n.putVocabularies(dict);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
