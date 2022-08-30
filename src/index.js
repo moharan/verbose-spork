@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import Amplify, { I18n } from 'aws-amplify';
 import config from './aws-exports';
+import "antd/dist/antd.css";
 import './index.css';
 import App from './App';
 Amplify.configure(config);
@@ -18,7 +19,7 @@ const dict = {
     "Enter your username": "Ingrese su usuario",
     "Reset Password": "Reiniciar Contraseña",
     "Sign in to your account": "Iniciar Sesión Aplicativo SISI",
-    "Forgot your password?": "Olvidaste tu contraseña?",
+    "Forgot your password?": "¿Olvidaste tu contraseña?",
     "Reset password": "Reiniciar Contraseña",
     "No account?": "¿No tienes una cuenta?",
     "Create account": "Crear una cuenta",
@@ -34,7 +35,16 @@ const dict = {
     "Reset your password": "Reinicie su contraseña",
     "Back to Sign In": "Volver al inicio de sesión",
     "Send Code": "Enviar código",
-    "Sign Out": "Cerrar sesión"
+    "Sign Out": "Cerrar sesión",
+    "Confirm Sign up": "Confirmar Registro",
+    "Confirmation Code": "Código de Confirmación",
+    "Confirm": "CONFIRMAR",
+    "Lost your code?": "¿Perdiste tu código?",
+    "Resend Code": "Reenviar código",
+    "Change Password": "Cambiar Contraseña",
+    "New password": "Nueva contraseña",
+    "Enter your new password": "Ingrese su nueva contraseña",
+    "Change": "Cambiar"
   }
 };
 
