@@ -12,7 +12,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Project
 
-https://main.dtuu0ionwbj81.amplifyapp.com/
+https://main.d1fg675i29cj93.amplifyapp.com/
+SISMOGUIA.CL
 
 ## Available Scripts
 
