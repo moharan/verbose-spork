@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sismoguia-dev-221317-authRole",
+      "UnauthRoleArn": "arn:aws:iam::528623840265:role/amplify-sismoguia-dev-221317-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::528623840265:role/amplify-sismoguia-dev-221317-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-sismoguia-dev-221317-deployment",
+      "UnauthRoleName": "amplify-sismoguia-dev-221317-unauthRole",
+      "StackName": "amplify-sismoguia-dev-221317",
+      "StackId": "arn:aws:cloudformation:us-east-1:528623840265:stack/amplify-sismoguia-dev-221317/25b24530-2bf7-11ed-8807-0a42d72521b5",
+      "AmplifyAppId": "d3r43htmxucwnr"
+    },
+    "categories": {
+      "auth": {
+        "sismoguiac2540c72": {}
+      }
+    }
+  }
+}
