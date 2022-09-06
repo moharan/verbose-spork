@@ -33,7 +33,7 @@ class AddNote extends Component {
       <input
         value={this.state.text}
         onChange={this.handleChange}
-        placeholder="New Note"
+        placeholder="Nueva Nota"
         style={styles.input}
       />
       <button onClick={this.handleClick} style={styles.addButton}>Add Note</button>
@@ -85,7 +85,7 @@ class App extends Component {
   render() {
     return (
       <div style={styles.container}>
-        <h1>Notes App</h1>
+        <h1>Apuntes</h1>
         <AddNote addNote={this.addNote} />
         <NotesList notes={this.state.notes} deleteTodo={this.deleteTodo} />
         <AmplifySignOut />
