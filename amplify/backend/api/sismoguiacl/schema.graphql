@@ -1,4 +1,6 @@
-type Note @model @auth(rules: [{ allow: owner }]) {
+type Message @model {
   id: ID!
-  text: String!
+  title: String!
+  color: String
+  createdAt: String
 }

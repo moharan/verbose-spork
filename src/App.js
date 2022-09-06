@@ -12,7 +12,6 @@ import "./App.css";
 Amplify.configure(awsExports);
 
 class AddNote extends Component {
-  // const [isUpdate, setIsUpdate] = useState(false);
   constructor(props) {
     super(props);
     this.state = { text: '' };
@@ -36,7 +35,7 @@ class AddNote extends Component {
         placeholder="Nueva Nota"
         style={styles.input}
       />
-      <button onClick={this.handleClick} style={styles.addButton}>Add Note</button>
+      <button onClick={this.handleClick} style={styles.addButton}>Agregar</button>
     </div>
     );
   }
@@ -58,6 +57,7 @@ class NotesList extends Component {
 }
 
 class App extends Component {
+    // const [isUpdate, setIsUpdate] = useState(false);
   constructor(props) {
     super(props);
     this.state = { notes: [] };

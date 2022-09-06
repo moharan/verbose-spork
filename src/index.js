@@ -12,13 +12,13 @@ I18n.setLanguage('es');
 
 const dict = {
   'es': {
-    "Sign In": "Vamos al Aplicativo SISI",
+    "Sign In": "Vamos a SISMOGUíA",
     "Username *": "Usuario *",
     "Password *": "Contraseña *",
     "Enter your password": "Ingrese su contraseña",
     "Enter your username": "Ingrese su usuario",
     "Reset Password": "Reiniciar Contraseña",
-    "Sign in to your account": "Iniciar Sesión Aplicativo SISI",
+    "Sign in to your account": "Iniciar Sesión Sismoguía",
     "Forgot your password?": "¿Olvidaste tu contraseña?",
     "Reset password": "Reiniciar Contraseña",
     "No account?": "¿No tienes una cuenta?",
@@ -44,7 +44,9 @@ const dict = {
     "Change Password": "Cambiar Contraseña",
     "New password": "Nueva contraseña",
     "Enter your new password": "Ingrese su nueva contraseña",
-    "Change": "Cambiar"
+    "Change": "Cambiar",
+    "User does not exist.": "Datos de usuario no existente",
+    "Incorrect username or password.": "Usuario o contraseña incorrecta"
   }
 };
 
