@@ -1,13 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
-    "api": {
-        "sismoguia": {
-            "GraphQLAPIKeyOutput": "string",
-            "GraphQLAPIIdOutput": "string",
-            "GraphQLAPIEndpointOutput": "string"
-        }
-    },
     "auth": {
-        "sismoguiac2540c72": {
+        "sismoguiacl2759bad8": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",

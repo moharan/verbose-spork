@@ -12,7 +12,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Project
 
-https://main.d3r43htmxucwnr.amplifyapp.com/
 SISMOGUIA.CL
 
 ## Available Scripts
@@ -26,3 +25,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ### `npm test`
 
 ### `npm run build`
+
+## Available Info Dev
+https://aws.amazon.com/es/getting-started/guides/deploy-webapp-amplify/
+https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/#create-authentication-service
+
+
+
