@@ -19,13 +19,14 @@ https://main.d8r9i9bx9d9am.amplifyapp.com/
 
 In the project directory, you can run:
 
+FrontEnd:
 ### `npm start`
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### `npm test`
-
-### `npm run build`
+BackEnd:
+### `nodemon server`
+Open [http://localhost:4000/graphql](http://localhost:4000/graphql) to view it in your browser.
 
 ## Available Info Dev
 - https://aws.amazon.com/es/getting-started/guides/deploy-webapp-amplify/
