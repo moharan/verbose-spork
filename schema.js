@@ -102,12 +102,24 @@ const RootQuery = new GraphQLObjectType({
                 // return data from a datasource
             }
         },
-        hobby: {
+        users: {
+            type: new GraphQLList(UserType),
+            resolve(parent, args){
+                return usersData;
+            }
+        },
+        hobby:{
             type: HobbyType,
             args: {id: {type: GraphQLID}},
 
             resolve(parent, args){
                 return _.find(hobbiesData, {id: args.id});
+            }
+        },
+        hobbies: {
+            type: new GraphQLList(HobbyType),
+            resolve(parent, args){
+                return hobbiesData;
             }
         },
         post: {
@@ -117,7 +129,13 @@ const RootQuery = new GraphQLObjectType({
             resolve(parent, args){
                 return _.find(postData, {id: args.id});
             }
-        }
+        },
+        posts: {
+            type: new GraphQLList(PostType),
+            resolve(parent, args){
+                return postData;
+            }
+        },
     }
 });
 
@@ -125,7 +143,7 @@ const RootQuery = new GraphQLObjectType({
 const Mutation = new GraphQLObjectType({
     name: "Mutation",
     fields: {
-        createUser: {
+        CreateUser: {
             type: UserType,
             args: {
                 //id: {type: GraphQLID}
@@ -141,6 +159,38 @@ const Mutation = new GraphQLObjectType({
                     profession: args.profession
                 }
                 return user;
+            }
+        },
+        CreatePost: {
+            type: PostType,
+            args: {
+                comment: {type: GraphQLString},
+                userId: {type: GraphQLID}
+            },
+
+            resolve(parent, args) {
+                let post = {
+                    comment: args.comment,
+                    userId: args.userId
+                }
+                return post;
+            }
+        },
+        CreateHobby: {
+            type: HobbyType,
+            args: {
+                title: {type: GraphQLString},
+                description: {type: GraphQLInt},
+                userId: {type: GraphQLID}
+            },
+
+            resolve(parent, args) {
+                let hobby = {
+                    title: args.title,
+                    description: args.description,
+                    userId: args.userId
+                }
+                return hobby;
             }
         }
     }
