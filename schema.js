@@ -12,8 +12,7 @@ var hobbiesData = [
     {id: '1', title: 'running', description:'bal bla bla 1', userId: '3'},
     {id: '2', title: 'cleaning', description:'bal bla bla 2', userId: '3'},
     {id: '55', title: 'washing', description:'bal bla bla 55', userId: '3'},
-    {id: '12', title: 'singing', description:'bal bla bla 12', userId: '1'},
-    {id: '4', title: 'dancing', description:'bal bla bla 4', userId: '2'},
+    {id: '12', title: 'singing', description:'bal bla bla 12', userId: '1'}
 ]
 
 var postData = [
@@ -27,7 +26,8 @@ const {
     GraphQLID,
     GraphQLString,
     GraphQLInt,
-    GraphQLSchema
+    GraphQLSchema,
+    GraphQLList
 
 } = graphql
 
@@ -39,7 +39,21 @@ const UserType = new GraphQLObjectType({
         id: {type: GraphQLID},
         name: {type: GraphQLString},
         age: {type: GraphQLInt},
-        profession: {type: GraphQLString}
+        profession: {type: GraphQLString},
+
+        posts: {
+            type: new GraphQLList(PostType),
+            resolve(parent, args) {
+                return _.filter(postData, {userId: parent.id})
+            }
+        },
+
+        hobbies: {
+            type: new GraphQLList(HobbyType),
+            resolve(parent, args) {
+                return _.filter(hobbiesData, {userId: parent.id})
+            }
+        },
     })
 });
 
