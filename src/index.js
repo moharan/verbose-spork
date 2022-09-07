@@ -46,7 +46,8 @@ const dict = {
     "Enter your new password": "Ingrese su nueva contraseña",
     "Change": "Cambiar",
     "User does not exist.": "Datos de usuario no existente",
-    "Incorrect username or password.": "Usuario o contraseña incorrecta"
+    "Incorrect username or password.": "Usuario o contraseña incorrecta",
+    "Network error": "Error de red"
   }
 };
 
