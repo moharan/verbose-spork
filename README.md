@@ -1,11 +1,5 @@
 # verbose-spork
-SISMOGUIA app, Amplify Console CI/CD
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Modules
+SISMOGUIA app, AWS AppSync & Amplify with React & GraphQL
 
 - Site Under Construction
 <a href='https://www.freepik.es/vectores/servidores'>Vector de servidores creado por fullvector - www.freepik.es</a>
@@ -13,18 +7,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Project
 
 SISMOGUIA.CL
-https://main.d8r9i9bx9d9am.amplifyapp.com/
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-FrontEnd:
-### `npm start`
+FrontEnd / folder app:
+### `npm run dev`
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-BackEnd:
+BackEnd / folder server:
 ### `nodemon server`
 Open [http://localhost:4000/graphql](http://localhost:4000/graphql) to view it in your browser.
 
