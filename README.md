@@ -25,6 +25,11 @@ Open [http://localhost:4000/graphql](http://localhost:4000/graphql) to view it i
 - https://aws.amazon.com/es/getting-started/guides/deploy-webapp-amplify/
 - https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/#create-authentication-service
 - https://us-east-1.console.aws.amazon.com/appsync/home?region=us-east-1#/sygsmjgsmreineaeuz4vlfo77m/v1/home
+- https://graphql.org/
+- https://lodash.com/
+- https://tailwindcss.com/
+- https://www.mongodb.com/
+
 
 
 
