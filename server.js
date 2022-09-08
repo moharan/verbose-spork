@@ -8,14 +8,12 @@ const mongoose = require("mongoose");
 const server = express();
 const port = process.env.PORT || 4000
 
-// mongodb+srv://guia:<uLSDRs2rPnZr0u5Y>@sismoguiacluster.9ckofjt.mongodb.net/?retryWrites=true&w=majority
-
 server.use(
   "/graphql",
   graphqlHTTP({
     graphiql: true,
-    // schema: schema
-    schema: testSchema
+    schema: schema
+    // schema: testSchema
   })
 );
 
