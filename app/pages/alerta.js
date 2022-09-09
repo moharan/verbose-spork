@@ -3,12 +3,14 @@ import { API, Auth } from "aws-amplify";
 import { postsByUsername } from "./../src/graphql/queries";
 import Link from "next/link";
 import Moment from "moment";
+import { deletePost as deletePostMutation } from "../src/graphql/mutations";
 
 export default function Alerta() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     fetchPosts();
   }, []);
+
   async function fetchPosts() {
     const { username } = await Auth.currentAuthenticatedUser();
     const postData = await API.graphql({
@@ -17,6 +19,16 @@ export default function Alerta() {
     });
     setPosts(postData.data.postsByUsername.items);
   }
+
+  async function deletePost(id) {
+    await API.graphql({
+      query: deletePostMutation,
+      variables: { input: {id} },
+      authMode: "AMAZON_COGNITO_USER_POOLS"
+    })
+    fetchPosts()
+  }
+
   return (
     <div>
       <h1>Mis Alertas</h1>
