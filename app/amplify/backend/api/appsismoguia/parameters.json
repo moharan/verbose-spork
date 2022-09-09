@@ -1,5 +1,12 @@
 {
   "AppSyncApiName": "appsismoguia",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2022-09-09T03:07:49.252Z",
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authappsismoguia4cd4d9eb",
+      "Outputs.UserPoolId"
+    ]
+  }
 }
