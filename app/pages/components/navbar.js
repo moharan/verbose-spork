@@ -37,8 +37,8 @@ const Navbar = () => {
         </Link>
       ))}
       {signedUser && (
-        <Link href="/notificaciones">
-          <a className="">Mis Notificaciones</a>
+        <Link href="/alerta">
+          <a className="">Mis Alertas</a>
         </Link>
       )}
     </nav>
