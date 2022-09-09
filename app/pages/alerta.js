@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { API, Auth } from "aws-amplify";
 import { postsByUsername } from "./../src/graphql/queries";
 import Link from "next/link";
+import Moment from "moment";
 
 export default function Alerta() {
   const [posts, setPosts] = useState([]);
@@ -20,12 +21,28 @@ export default function Alerta() {
     <div>
       <h1>Mis Alertas</h1>
       {posts.map((post, index) => (
-        <Link key={index} href={`/posts/${post.id}`}>
+        <div className="" key={index}>
+          {/* {post.coverImage && (
+          <img
+            src={post.coverImage}
+          />
+        )} */}
           <div>
-            <h2>{post.title}</h2>
-            <p>Autor: {post.username}</p>
+            <p>{post.title}</p>
+            <p>
+              Created on: {Moment(post.createdAt).format("ddd, MMM hh:mm a")}
+            </p>
           </div>
-        </Link>
+          <div>
+            <p>
+              <Link href={`/edit-post/${post.id}`}>Edit Post</Link>
+            </p>
+            <p>
+              <Link href={`/posts/${post.id}`}>View Post</Link>
+            </p>
+            <button onClick={() => deletePost(post.id)}>Delete Post</button>
+          </div>
+        </div>
       ))}
     </div>
   );
