@@ -4,6 +4,10 @@ import { API } from "aws-amplify";
 import { useRouter } from "next/router";
 import { v4 as uuid } from "uuid";
 import { createPost } from "../src/graphql/mutations";
+// import SimpleMDE from "react-simplemde-editor";
+import dynamic from "next/dynamic";
+const SimpleMDE = dynamic(() => import("react-simplemde-editor"), { ssr: false });
+import "easymde/dist/easymde.min.css";
 
 const initialState = { title: "", content: "" };
 function Notificacion() {
@@ -25,16 +29,30 @@ function Notificacion() {
 
     await API.graphql({
       query: createPost,
-      variables: {input: post},
-      authMode: "AMAZON_COGNITO_USER_POOLS"
+      variables: { input: post },
+      authMode: "AMAZON_COGNITO_USER_POOLS",
     });
     // router.push(`/post/${id}`)
   }
   return (
     <div>
-        <h1>Crear Nueva Notificación</h1>
+      <h1>Crear Nueva Notificación</h1>
+      <input
+        onChange={onChange}
+        name = "title"
+        placeholder="Title"
+        value={post.title}
+        className=""
+    />
+    <SimpleMDE
+        value={post.content}
+        onChange={(value) => setPosts({...post, content:value})}
+    />
+    <button type="button" onClick={createNewPost}>
+        Crear Notificación
+    </button>
     </div>
-  )
+  );
 }
 
-export default Notificacion;
+export default withAuthenticator(Notificacion);
