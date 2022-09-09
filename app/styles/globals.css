@@ -3,3 +3,7 @@ body {
     background-color: azure;
 }
 
+div {
+    border: 1px solid greenyellow;
+}
+
