@@ -17,7 +17,7 @@ export default function Home() {
   }
   return (
     <>
-      <h1 className="text-6xl font-bold underline">Posts</h1>
+      <h1 className="">Posts</h1>
       {
         posts.map((post, index) => (
           <p key={index}>{post.content}</p>
