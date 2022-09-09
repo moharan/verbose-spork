@@ -17,8 +17,9 @@ function Profile() {
   return (
     <>
       <h1>Perfil</h1>
-      <h1>{user.username}</h1>
-      <p>{user.attributes.email}</p>
+      <h1>Username: {user.username}</h1>
+      <p>Email: {user.attributes.email}</p>
+      <AmplifySignOut/>
     </>
   );
 }

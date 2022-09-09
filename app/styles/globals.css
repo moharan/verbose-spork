@@ -1,9 +1,19 @@
 /** Global CSS **/
+:root {
+    --primary-color: red;
+    --secondary-color: greenyellow;
+    --tertiary-color: yellow;
+    --fourth-color: azure;
+    /** reset amplify styles **/
+    --amplify-primary-color: purple;
+}
+
 body {
-    background-color: azure;
+    background-color: var(--fourth-color);
 }
 
 div {
-    border: 1px solid greenyellow;
+    border: 1px solid var(--secondary-color);
 }
+
 
