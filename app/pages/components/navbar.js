@@ -30,7 +30,7 @@ const Navbar = () => {
       {[
         ["Inicio", "/"],
         ["Crear Notificación", "/notificacion"],
-        ["Perfil", "/profile"],
+        ["Perfil", "/perfil"],
       ].map(([title, url], index) => (
         <Link href={url} key={index}>
           <a className="">{title}</a>
