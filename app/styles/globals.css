@@ -101,7 +101,7 @@ h1 {
     .contain-page {
         flex-direction: column;
     }
-    .menu {
+    .menu, .init {
         width: 100%;
     }
     .navbar {

@@ -37,13 +37,13 @@ export default function Home() {
                 [Cuidado]
               </a>
             </Popover>
-            <br/>
+            <br />
             <Popover content={"- Durante el Sismo"} title="Información">
               <a href="/#" onClick={(e) => e.preventDefault()}>
                 [Durante]
               </a>
             </Popover>
-            <br/>
+            <br />
             <Popover content={"- Después del Sismo"} title="Información">
               <a href="/#" onClick={(e) => e.preventDefault()}>
                 [Despues]
@@ -68,13 +68,13 @@ export default function Home() {
                 [Cuidado]
               </a>
             </Popover>
-            <br/>
+            <br />
             <Popover content={"- Durante el Sismo"} title="Información">
               <a href="/#" onClick={(e) => e.preventDefault()}>
                 [Durante]
               </a>
             </Popover>
-            <br/>
+            <br />
             <Popover content={"- Después del Sismo"} title="Información">
               <a href="/#" onClick={(e) => e.preventDefault()}>
                 [Despues]
@@ -92,12 +92,10 @@ export default function Home() {
       <h1>Reportes cercanos</h1>
       {posts.map((post, index) => (
         <Link key={index} href={`/posts/${post.id}`}>
-          <div>
-            <h2 key={index}>
-              {post.title}
-            </h2>
-            <p>Autor: {post.username}</p>
-          </div>
+          <Card>
+            <p className="detail-title" key={index}>{post.title}</p>
+            <p className="detail-info">Autor: {post.username}</p>
+          </Card>
         </Link>
       ))}
     </div>
