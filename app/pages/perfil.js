@@ -1,5 +1,6 @@
 import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 import { Auth } from "aws-amplify";
+import { Card } from "antd";
 import { useState, useEffect } from "react";
 
 function Perfil() {
@@ -15,12 +16,16 @@ function Perfil() {
 
   if (!user) return null;
   return (
-    <>
+    <Card>
       <h1>Perfil</h1>
-      <h1>Username: {user.username}</h1>
-      <p>Email: {user.attributes.email}</p>
-      <AmplifySignOut/>
-    </>
+      <div className="profile">
+        <div>
+          <h2 className="detail-title">Username: {user.username}</h2>
+          <p className="detail-info">Email: {user.attributes.email}</p>
+        </div>
+        <AmplifySignOut />
+      </div>
+    </Card>
   );
 }
 

@@ -8,6 +8,7 @@ import { createPost } from "../src/graphql/mutations";
 import dynamic from "next/dynamic";
 const SimpleMDE = dynamic(() => import("react-simplemde-editor"), { ssr: false });
 import "easymde/dist/easymde.min.css";
+import { Button, Input } from 'antd';
 
 const initialState = { title: "", content: "" };
 function Notificacion() {
@@ -38,11 +39,11 @@ function Notificacion() {
   }
   return (
     <div>
-      <h1>Crear Nueva Notificación</h1>
-      <input
+      <h1>Nueva Alerta o Notificación</h1>
+      <Input
         onChange={onChange}
         name = "title"
-        placeholder="Title"
+        placeholder="Titulo para el reporte"
         value={post.title}
         className=""
     />
@@ -50,9 +51,9 @@ function Notificacion() {
         value={post.content}
         onChange={(value) => setPosts({...post, content:value})}
     />
-    <button type="button" onClick={createNewPost}>
-        Crear Notificación
-    </button>
+    <Button type="primary" onClick={createNewPost}>
+        Crear Reporte
+    </Button>
     </div>
   );
 }

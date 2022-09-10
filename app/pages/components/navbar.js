@@ -26,19 +26,19 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="">
+    <nav className="navbar">
       {[
         ["Inicio", "/"],
-        ["Crear Notificación", "/notificacion"],
+        ["Crear Reporte", "/notificacion"],
         ["Perfil", "/perfil"],
       ].map(([title, url], index) => (
         <Link href={url} key={index}>
-          <a className="">{title}</a>
+          <a>{title}</a>
         </Link>
       ))}
       {signedUser && (
         <Link href="/alerta">
-          <a className="">Mis Alertas</a>
+          <a>Mis Alertas</a>
         </Link>
       )}
     </nav>

@@ -11,7 +11,7 @@ export default function Post({ post }) {
   }
   return (
     <>
-      <h1 className="">{post.title}</h1>
+      <h1>{post.title}</h1>
       <p>Por: {post.username}</p>
       <div>
       <Reactmarkdown className="prose" children={post.content}/>
