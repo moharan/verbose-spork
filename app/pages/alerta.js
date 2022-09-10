@@ -5,7 +5,6 @@ import { postsByUsername } from "./../src/graphql/queries";
 import Link from "next/link";
 import Moment from "moment";
 import { deletePost as deletePostMutation } from "../src/graphql/mutations";
-import "antd/dist/antd.css";
 
 export default function Alerta() {
   const [posts, setPosts] = useState([]);

@@ -7,7 +7,6 @@ import Link from "next/link";
 // import Cuidado from "./../images/support.svg";
 // import Durante from "./../images/psychology.svg";
 // import Despues from "./../images/warning.svg";
-import "antd/dist/antd.css";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);

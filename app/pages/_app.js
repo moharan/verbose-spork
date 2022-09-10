@@ -4,6 +4,7 @@ import Amplify, { I18n } from 'aws-amplify';
 import Image from "next/image";
 import Logo from "./../images/sismoguia.svg";
 import Navbar from "./components/navbar";
+import "antd/dist/antd.css";
 // Amplify.configure(config);
 // I18n.setLanguage('es');
 
