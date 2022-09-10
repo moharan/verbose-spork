@@ -47,7 +47,7 @@ export default function Alerta() {
           </div>
           <div>
             <p>
-              <Link href={`/edit-post/${post.id}`}>Edit Post</Link>
+              <Link href={`/editar/${post.id}`}>Edit Post</Link>
             </p>
             <p>
               <Link href={`/posts/${post.id}`}>View Post</Link>

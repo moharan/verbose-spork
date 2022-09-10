@@ -1,6 +1,6 @@
 import { API } from "aws-amplify";
 import { useRouter } from "next/router";
-import reactmarkdown from "react-markdown";
+import Reactmarkdown from "react-markdown";
 import "../../configureAmplify";
 import { listPosts, getPost } from "../../src/graphql/queries";
 
@@ -14,7 +14,7 @@ export default function Post({ post }) {
       <h1 className="">{post.title}</h1>
       <p>Por: {post.username}</p>
       <div>
-      <p reactmarkdown="prose">{post.content}</p>
+      <Reactmarkdown className="prose" children={post.content}/>
       </div>
     </>
   );
