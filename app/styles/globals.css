@@ -1,19 +1,43 @@
 /** Global CSS **/
 :root {
-    --primary-color: red;
-    --secondary-color: greenyellow;
-    --tertiary-color: yellow;
+    --primary-color: #3c1187;
+    --secondary-color: white;
+    --tertiary-color: gray;
     --fourth-color: azure;
     /** reset amplify styles **/
     --amplify-primary-color: purple;
 }
 
 body {
-    background-color: var(--fourth-color);
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    margin: 0 auto;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 div {
-    border: 1px solid var(--secondary-color);
+    border: 1px solid green;
 }
 
+.contain-page {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.logo {
+    width: 50%;
+    height: auto;
+    background-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .contain-page {
+        flex-direction: column;
+    }
+    .logo {
+        width: 100%;
+    }
+ }
 

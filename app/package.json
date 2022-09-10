@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^1.2.26",
+    "antd": "^4.23.1",
     "aws-amplify": "^4.3.34",
     "moment": "^2.29.4",
     "momento": "^0.2.0",
