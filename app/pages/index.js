@@ -94,6 +94,21 @@ export default function Home() {
           <Card>
             <p className="detail-title" key={index}>{post.title}</p>
             <p className="detail-info">Autor: {post.username}</p>
+            {
+              post.comments.items.length > 0 &&
+              post.comments.items.map((comments,index) => (
+                <div key={index}>
+                  <div className="comment-message">
+                    <p>
+                      {comments.message}
+                    </p>
+                    <p className="detail-info">
+                      <span className="detail-by">Comentario por:</span> {comments.createdBy}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
           </Card>
         </Link>
       ))}

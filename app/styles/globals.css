@@ -97,6 +97,22 @@ h1 {
     align-items: center;
 }
 
+.comment-message {
+    border-radius: 1em;
+    -webkit-box-shadow: 2px 3px 5px 0px rgba(153,150,153,1);
+    -moz-box-shadow: 2px 3px 5px 0px rgba(153,150,153,1);
+    box-shadow: 2px 3px 5px 0px rgba(153,150,153,1);
+    width: 350px;
+    margin: 0 0 2em 2em;
+    padding: 2em 2em 1em;
+}
+
+.detail-by {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .contain-page {
         flex-direction: column;

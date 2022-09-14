@@ -6,6 +6,7 @@ import { Button } from "antd";
 import { listPosts, getPost } from "../../src/graphql/queries";
 import { createComment } from "../../src/graphql/mutations";
 import { useState } from "react";
+import { v4 as uuid } from "uuid";
 import dynamic from "next/dynamic";
 const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
   ssr: false,
@@ -17,15 +18,33 @@ const initialState = { message: "" };
 export default function Post({ post }) {
   const [comment, setComment] = useState(initialState);
   const [showMe, setShowMe] = useState(false);
+  const { message } = comment;
+  const router = useRouter();
 
   function toggle() {
     setShowMe(!showMe);
   }
 
-  const router = useRouter();
   if (router.isFallback) {
     return <div>Cargando ...</div>;
   }
+
+  async function createTheComment() {
+    if (!message) return;
+    const id = uuid();
+    comment.id = id;
+    try {
+      await API.graphql({
+        query: createComment,
+        variables: { input: comment },
+        authMode: "AMAZON_COGNITO_USER_POOLS",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    router.push("/alerta");
+  }
+
   return (
     <>
       <p className="detail-title">{post.title}</p>
@@ -38,9 +57,18 @@ export default function Post({ post }) {
           Escribe un comentario
         </Button>
         {
-          <div style={{ display: showMe ? "Block" : "none" }}>
-            <SimpleMDE value="Cuéntanos que está pasando" />
-            <Button type="primary">Guardar</Button>
+          <div style={{ display: showMe ? "block" : "none" }}>
+            <SimpleMDE
+              value={comment.message}
+              onChange={(value) =>
+                setComment({ ...comment, message: value, postID: post.id })
+              }
+            />
+            <Button
+              type="primary"
+              onClick={createTheComment}>
+                Guardar
+            </Button>
           </div>
         }
       </div>
