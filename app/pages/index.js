@@ -3,10 +3,10 @@ import { Card, Popover } from "antd";
 import { API, autoShowTooltip } from "aws-amplify";
 import { listPosts } from "./../src/graphql/queries";
 import Link from "next/link";
-// import Image from "next/image";
-// import Cuidado from "./../images/support.svg";
-// import Durante from "./../images/psychology.svg";
-// import Despues from "./../images/warning.svg";
+import Image from "next/image";
+import Cuidado from "./../images/support.svg";
+import Durante from "./../images/psychology.svg";
+import Despues from "./../images/warning.svg";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -23,77 +23,78 @@ export default function Home() {
   }
   return (
     <div>
-      <h1>Ultimos Eventos</h1>
+      <h1 className="alert-message">Ultimos Eventos</h1>
       {/* Automatizar */}
       <Card
-        size="small"
+        size="medium"
         title="Santiago"
-        className="evento-card"
+        className="event-card"
         extra={
-          <div>
+          <div className="bg-card">
             <Popover content={"cuidado"} title="Medidas Precaución">
               <a href="/#" onClick={(e) => e.preventDefault()}>
-                [Cuidado]
+                <Image src={Cuidado}/>
               </a>
             </Popover>
             <br />
             <Popover content={"- Durante el Sismo"} title="Información">
               <a href="/#" onClick={(e) => e.preventDefault()}>
-                [Durante]
+              <Image src={Durante}/>
               </a>
             </Popover>
             <br />
             <Popover content={"- Después del Sismo"} title="Información">
               <a href="/#" onClick={(e) => e.preventDefault()}>
-                [Despues]
+              <Image src={Despues}/>
               </a>
             </Popover>
           </div>
         }
       >
-        <p>2022-07-21</p>
-        <p>12:43:23</p>
-        <p>62 km al S de Socaire</p>
-        <p>264 KM</p>
+        <p>2022-09-14</p>
+        <p><b>13:39:18</b></p>
+        <p>49 km al SO de Mina Collahuasi</p>
+        <p>116 km</p>
         <h4>2.8</h4>
       </Card>
       <Card
-        size="small"
+        size="medium"
         title="Santiago"
+        className="event-card"
         extra={
-          <div>
+          <div className="bg-card">
             <Popover content={"cuidado"} title="Medidas Precaución">
               <a href="/#" onClick={(e) => e.preventDefault()}>
-                [Cuidado]
+                <Image src={Cuidado}/>
               </a>
             </Popover>
             <br />
             <Popover content={"- Durante el Sismo"} title="Información">
               <a href="/#" onClick={(e) => e.preventDefault()}>
-                [Durante]
+              <Image src={Durante}/>
               </a>
             </Popover>
             <br />
             <Popover content={"- Después del Sismo"} title="Información">
               <a href="/#" onClick={(e) => e.preventDefault()}>
-                [Despues]
+              <Image src={Despues}/>
               </a>
             </Popover>
           </div>
         }
       >
-        <p>2022-07-21</p>
-        <p>12:43:23</p>
-        <p>62 km al S de Socaire</p>
-        <p>264 KM</p>
-        <h4>2.8</h4>
+        <p>2022-09-13 </p>
+        <p><b>16:57:27</b></p>
+        <p>55 km al SE de Antofagasta</p>
+        <p>60 KM</p>
+        <h4>4.1</h4>
       </Card>
-      <h1>Reportes cercanos</h1>
+      <h1>Reportes Cercanos</h1>
       {posts.map((post, index) => (
         <Link key={index} href={`/posts/${post.id}`}>
-          <Card>
+          <Card className="report-card">
             <p className="detail-title" key={index}>{post.title}</p>
-            <p className="detail-info">Autor: {post.username}</p>
+            <p className="detail-info"><b>Autor:</b> {post.username}</p>
             {
               post.comments.items.length > 0 &&
               post.comments.items.map((comments,index) => (

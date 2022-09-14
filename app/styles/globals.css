@@ -4,6 +4,7 @@
     --secondary-color: white;
     --tertiary-color: gray;
     --fourth-color: azure;
+    --hover-color: #F18C1B;
     /** reset amplify styles **/
     /* --amplify-primary-color: purple; */
 }
@@ -50,7 +51,7 @@ h1 {
 }
 
 .navbar a:hover {
-    color: var(--secondary-color);
+    color: var(--hover-color);
     text-decoration: underline;
     font-weight: bolder;
 }
@@ -80,7 +81,7 @@ h1 {
 
 .detail-info {
     color: var(--tertiary-color);
-    font-size: .8em;
+    font-size: 1em;
 }
 
 .detail-title {
@@ -105,12 +106,34 @@ h1 {
     width: auto;
     margin: 0 0 2em 2em;
     padding: 2em 2em 1em;
+    background-color: var(--secondary-color);
 }
 
 .detail-by {
     color: var(--primary-color);
-    font-weight: 500;
-    text-decoration: underline;
+    font-weight: 600;
+}
+
+.bg-card {
+    display: flex;
+    flex-direction: row;
+}
+
+.alert-message {
+    color: var(--hover-color) !important;
+}
+
+.event-card, .report-card {
+    background-color: antiquewhite !important;
+    border-color: var(--hover-color) !important;
+    margin-bottom: 2em !important;
+    border-radius: 1em !important;
+}
+
+.report-card {
+    background-color: aliceblue !important;
+    border-color: var(--primary-color) !important;
+
 }
 
 @media (max-width: 768px) {
