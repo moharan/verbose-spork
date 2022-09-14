@@ -18,7 +18,7 @@ body {
 
 h1 {
     text-decoration: underline;
-    color: var(--tertiary-color);
+    color: var(--tertiary-color) !important;
 }
 
 /* Testing QA Styles */
@@ -102,7 +102,7 @@ h1 {
     -webkit-box-shadow: 2px 3px 5px 0px rgba(153,150,153,1);
     -moz-box-shadow: 2px 3px 5px 0px rgba(153,150,153,1);
     box-shadow: 2px 3px 5px 0px rgba(153,150,153,1);
-    width: 350px;
+    width: auto;
     margin: 0 0 2em 2em;
     padding: 2em 2em 1em;
 }
@@ -127,6 +127,12 @@ h1 {
     }
     .navbar a {
         font-size: 2em;
+    }
+ }
+
+ @media (max-width: 768px) {
+    .navbar a {
+        font-size: 1.2em;
     }
  }
 

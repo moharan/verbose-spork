@@ -4,6 +4,8 @@ import { Card, Button } from "antd";
 import { postsByUsername } from "./../src/graphql/queries";
 import Link from "next/link";
 import Moment from "moment";
+import 'moment/locale/es';
+Moment.locale('es');
 import { deletePost as deletePostMutation } from "../src/graphql/mutations";
 
 export default function Alerta() {
@@ -38,22 +40,22 @@ export default function Alerta() {
           <div>
             <p className="detail-title">{post.title}</p>
             <p className="detail-info">
-              Created on: {Moment(post.createdAt).format("ddd, MMM hh:mm a")}
+              Fecha: {Moment(post.createdAt).format("ddd, MMM hh:mm a")}
             </p>
           </div>
           <div className="buttons">
             <p>
               <Button type="default">
-                <Link href={`/editar/${post.id}`}>Edit Post</Link>
+                <Link href={`/editar/${post.id}`}>Editar</Link>
               </Button>
             </p>
             <p>
               <Button type="primary">
-                <Link href={`/posts/${post.id}`}>View Post</Link>
+                <Link href={`/posts/${post.id}`}>Visualizar</Link>
               </Button>
             </p>
             <Button type="primary" danger onClick={() => deletePost(post.id)}>
-              Delete Post
+              Eliminar
             </Button>
           </div>
         </Card>
