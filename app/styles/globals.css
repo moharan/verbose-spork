@@ -22,6 +22,10 @@ h1 {
     color: var(--tertiary-color) !important;
 }
 
+.ant-modal-footer {
+    display: none !important;
+}
+
 /* Testing QA Styles */
 /* div {
     border: 1px solid green;

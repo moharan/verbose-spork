@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
     <div className="contain-page">
     <div className="menu">
       <Navbar/>
-      <Image src={Logo} layout="responsive" width={200} height={200} priority="true"/>
+      <Image alt="Logotipo" src={Logo} layout="responsive" width={100} height={100} priority="true"/>
     </div>
     <div className="init">
     <Component {...pageProps} />
