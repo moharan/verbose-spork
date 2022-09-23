@@ -7,9 +7,17 @@ import Image from "next/image";
 import Cuidado from "./../images/support.svg";
 import Durante from "./../images/psychology.svg";
 import Despues from "./../images/warning.svg";
+import LightboxCuidado from "./lightboxCuidado";
+import LightboxDurante from "./lightboxDurante";
+import LightboxDespues from "./lightboxDespues";
+import LightboxKit from "./lightboxKit";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
+  const [isCuidado, setIsCuidado] = useState(false);
+  const [isDurante, setIsDurante] = useState(false);
+  const [isDespues, setIsDespues] = useState(false);
+  const [isKit, setIsKit] = useState(false);
 
   useEffect(() => {
     fetchPosts();
@@ -23,7 +31,22 @@ export default function Home() {
   }
   return (
     <div>
+      {isCuidado ? (
+        <LightboxCuidado isCuidado={isCuidado} setIsCuidado={setIsCuidado} />
+      ) : null}
+      {isDurante ? (
+        <LightboxDurante isDurante={isDurante} setIsDurante={setIsDurante} />
+      ) : null}
+      {isDespues ? (
+        <LightboxDespues isDespues={isDespues} setIsDespues={setIsDespues} />
+      ) : null}
+      {isKit ? (
+        <LightboxKit isKit={isKit} setIsKit={setIsKit} />
+      ) : null}
       <h1 className="alert-message">Ultimos Eventos</h1>
+      <a href="#" onClick={() => setIsKit(true)}>
+        Kit de Seguridad
+      </a>
       {/* Automatizar */}
       <Card
         size="medium"
@@ -31,33 +54,54 @@ export default function Home() {
         className="event-card"
         extra={
           <div className="bg-card">
-            <Popover content={<a href="#">Ver más...</a>} title="Medidas Precaución">
+            <Popover
+              content={
+                <a href="#" onClick={() => setIsCuidado(true)}>
+                  Ver más...
+                </a>
+              }
+              title="Medidas Precaución"
+            >
               <a href="/#" onClick={(e) => e.preventDefault()}>
-                <Image src={Cuidado} />
+                <Image alt="Cuidado" src={Cuidado} />
               </a>
             </Popover>
             <br />
-            <Popover content={<a href="#">Ver más...</a>} title="Durante un Sismo">
+            <Popover
+              content={
+                <a href="#" onClick={() => setIsDurante(true)}>
+                  Ver más...
+                </a>
+              }
+              title="Durante un Sismo"
+            >
               <a href="/#" onClick={(e) => e.preventDefault()}>
-                <Image src={Durante} />
+                <Image alt="Durante el sismo" src={Durante} />
               </a>
             </Popover>
             <br />
-            <Popover content={<a href="#">Ver más...</a>} title="Después del Sismo">
+            <Popover
+              content={
+                <a href="#" onClick={() => setIsDespues(true)}>
+                  Ver más...
+                </a>
+              }
+              title="Después del Sismo"
+            >
               <a href="/#" onClick={(e) => e.preventDefault()}>
-                <Image src={Despues} />
+                <Image alt="Después del sismo" src={Despues} />
               </a>
             </Popover>
           </div>
         }
       >
-        <p>2022-09-14</p>
+        <p>2022-09-22</p>
         <p>
-          <b>13:39:18</b>
+          <b>22:50:36</b>
         </p>
-        <p>49 km al SO de Mina Collahuasi</p>
-        <p>116 km</p>
-        <h4>2.8</h4>
+        <p>150 km al O de Toltén</p>
+        <p>35 km</p>
+        <h4>3.9</h4>
       </Card>
       <Card
         size="medium"
@@ -65,33 +109,54 @@ export default function Home() {
         className="event-card"
         extra={
           <div className="bg-card">
-            <Popover content={<a href="#">Ver más...</a>} title="Medidas Precaución">
+            <Popover
+              content={
+                <a href="#" onClick={() => setIsCuidado(true)}>
+                  Ver más...
+                </a>
+              }
+              title="Medidas Precaución"
+            >
               <a href="/#" onClick={(e) => e.preventDefault()}>
-                <Image src={Cuidado} />
+                <Image alt="Cuidado" src={Cuidado} />
               </a>
             </Popover>
             <br />
-            <Popover content={<a href="#">Ver más...</a>} title="Durante un Sismo">
+            <Popover
+              content={
+                <a href="#" onClick={() => setIsDurante(true)}>
+                  Ver más...
+                </a>
+              }
+              title="Durante un Sismo"
+            >
               <a href="/#" onClick={(e) => e.preventDefault()}>
-                <Image src={Durante} />
+                <Image alt="Durante el sismo" src={Durante} />
               </a>
             </Popover>
             <br />
-            <Popover content={<a href="#">Ver más...</a>} title="Después del Sismo">
+            <Popover
+              content={
+                <a href="#" onClick={() => setIsDespues(true)}>
+                  Ver más...
+                </a>
+              }
+              title="Después del Sismo"
+            >
               <a href="/#" onClick={(e) => e.preventDefault()}>
-                <Image src={Despues} />
+                <Image alt="Después del sismo" src={Despues} />
               </a>
             </Popover>
           </div>
         }
       >
-        <p>2022-09-13 </p>
+        <p>2022-09-22 </p>
         <p>
-          <b>16:57:27</b>
+          <b>22:39:37</b>
         </p>
-        <p>55 km al SE de Antofagasta</p>
-        <p>60 KM</p>
-        <h4>4.1</h4>
+        <p>82 km al O de Arica</p>
+        <p>30 KM</p>
+        <h4>3.7</h4>
       </Card>
       <h1>Reportes Cercanos</h1>
       {posts.map((post, index) => (
